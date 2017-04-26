@@ -6,7 +6,7 @@
  *
  *
  * @package    tpl
- *by 好商城V3 www.33hao.com 运营版 
+ * 
  */
 defined('InShopNC') or exit('Access Invalid!');
 class Tpl{

@@ -2,7 +2,7 @@
 /**
  *  v3-b12
  *
- *by 好商城V3 www.33hao.com 运营版
+ *
  **/
 function exportExcel($filename,$content){
 	header("Cache-Control: must-revalidate, post-check=0, pre-check=0");

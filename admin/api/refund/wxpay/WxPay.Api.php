@@ -2,7 +2,7 @@
 /**
  *  v3-b12
  *
- *by 好商城V3 www.33hao.com 运营版
+ *
  **/ 
 if ($order['payment_code'] == 'wxpay') {
     require_once "WxPayApp.Config.php";
