@@ -789,7 +789,7 @@
     <Compile Include="admin\templates\default\web_upload_screen.php" />
     <Compile Include="admin\templates\default\web_upload_slide.php" />
     <Compile Include="admin\templates\default\welcome.php" />
-    <Compile Include="core\33hao.php" />
+    <Compile Include="core\comecore.php" />
     <Compile Include="core\framework\cache\cache.apc.php" />
     <Compile Include="core\framework\cache\cache.eaccelerator.php" />
     <Compile Include="core\framework\cache\cache.file.php" />

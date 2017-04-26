@@ -8,7 +8,7 @@ define('APP_ID','shop');
 define('BASE_PATH',str_replace('\\','/',dirname(__FILE__)));
 if (!@include(dirname(dirname(__FILE__)).'/global.php')) exit('global.php isn\'t exists!');
 if (!@include(BASE_PATH.'/control/control.php')) exit('control.php isn\'t exists!');
-if (!@include(BASE_CORE_PATH.'/33hao.php')) exit('33hao.php isn\'t exists!');
+if (!@include(BASE_CORE_PATH.'/comecore.php')) exit('comecore.php isn\'t exists!');
 	$wapurl = WAP_SITE_URL;
 	$agent = $_SERVER['HTTP_USER_AGENT'];
 	if(strpos($agent,"comFront") || strpos($agent,"iPhone") || strpos($agent,"MIDP-2.0") || strpos($agent,"Opera Mini") || strpos($agent,"UCWEB") || strpos($agent,"Android") || strpos($agent,"Windows CE") || strpos($agent,"SymbianOS")){
