@@ -41,7 +41,7 @@
               <span class="thumb">
                 <i></i>
 				<?php if($v['apic_cover'] != ''){ ?>
-				<a nctype="nyroModal"  href="<?php echo cthumb($v['apic_cover'], 1280, $v['store_id']);?>" rel="gal"><img title="<?php echo date('Y-m-d',$v['upload_time']);?><br/><?php echo $v['apic_spec'];?>px<br/><?php echo number_format($v['apic_size']/1024,2);?>k" width="64" height="64"  class="tip" src="<?php echo cthumb($v['apic_cover'], 60, $v['store_id']);?>"></a>
+				<a nctype="nyroModal"  href="<?php echo cthumb($v['apic_cover'], 1280, $v['store_id']);?>" rel="gal"><img title="<?php echo date('Y-m-d',$v['upload_time']);?><br/><?php echo $v['apic_spec'];?>px<br/><?php echo number_format($v['apic_size']/1024,2);?>k" width="64" height="64"  class="tip" src="<?php echo cthumb($v['apic_cover'], 60, $v['store_id']);?>" ></a>
 				<?php }else{?>
 				<img height="64" src="<?php echo ADMIN_SITE_URL.'/templates/'.TPL_NAME.'/images/member/default_image.png';?>" max-height='70px' max-width="70px">
 				<?php }?>

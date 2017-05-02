@@ -305,7 +305,7 @@ function sendSMS()
 	 * 下面的代码将发送内容为 test 给 159xxxxxxxx 和 159xxxxxxxx
 	 * $client->sendSMS还有更多可用参数，请参考 Client.php
 	 */
-	$statusCode = $client->sendSMS(array('XXX'),'XXXX'));
+	$statusCode = $client->sendSMS(array('XXX'),'XXXX');
 	echo "处理状态码:".$statusCode;
 }
 

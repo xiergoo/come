@@ -147,7 +147,7 @@ $arr = array(
 					array('args'=>'ap_manage,adv,website',					'text'=>$lang['nc_adv_manage']),
 					array('args'=>'web_config,web_config,website',			'text'=>$lang['nc_web_index']),
 					array('args'=>'rec_list,rec_position,website',			'text'=>$lang['nc_admin_res_position']),
-					array('args'=>'link,link,website',			'text'=>友情连接),
+					array('args'=>'link,link,website',			'text'=>'友情连接'),
 				)
 			),
 			7 => array(
@@ -191,17 +191,17 @@ $arr = array(
 if(C('flea_isuse')==1){
 	$arr['top'][] = array(
 				'args'	=> 'flea',
-				'text'	=> 闲置);
+				'text'	=> '闲置');
 	$arr['left'][] = array(
 				'nav' => 'flea',
-				'text' => 闲置,
+				'text' => '闲置',
 				'list' => array(
-					0 => array('args'=>'flea_index,flea_index,flea',			'text'=>SEO设置),
-					1 => array('args'=>'flea_class,flea_class,flea',			'text'=>分类管理),
-					2 => array('args'=>'flea_class_index,flea_class_index,flea','text'=>首页分类管理),
-					3 => array('args'=>'flea,flea,flea',						'text'=>闲置管理),
-					4 => array('args'=>'flea_region,flea_region,flea',			'text'=>地区管理),
-					5 => array('args'=>'adv_manage,flea_index,flea',			'text'=>闲置幻灯),
+					0 => array('args'=>'flea_index,flea_index,flea',			'text'=>'SEO设置'),
+					1 => array('args'=>'flea_class,flea_class,flea',			'text'=>'分类管理'),
+					2 => array('args'=>'flea_class_index,flea_class_index,flea','text'=>'首页分类管理'),
+					3 => array('args'=>'flea,flea,flea',						'text'=>'闲置管理'),
+					4 => array('args'=>'flea_region,flea_region,flea',			'text'=>'地区管理'),
+					5 => array('args'=>'adv_manage,flea_index,flea',			'text'=>'闲置幻灯'),
 				)
 			);
 }

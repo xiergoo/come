@@ -576,18 +576,18 @@ class member_fleaControl extends BaseFleaMemberControl{
 		switch ($menu_type) {
 			case 'goods':
 				$menu_array	= array(
-					1=>array('menu_key'=>'flea_list',	'menu_name'=>闲置列表,			'menu_url'=>'index.php?act=member_flea')
+					1=>array('menu_key'=>'flea_list',	'menu_name'=>'闲置列表',			'menu_url'=>'index.php?act=member_flea')
 				);
 				break;
 			case 'add_goods':
 				$menu_array = array(
-					1=>array('menu_key'=>'flea_list',	'menu_name'=>闲置列表,			'menu_url'=>'index.php?act=member_flea'),
-					2=>array('menu_key'=>'goods_add',	'menu_name'=>发布闲置,	'menu_url'=>'index.php?act=member_flea&op=add_goods')
+					1=>array('menu_key'=>'flea_list',	'menu_name'=>'闲置列表',			'menu_url'=>'index.php?act=member_flea'),
+					2=>array('menu_key'=>'goods_add',	'menu_name'=>'发布闲置',	'menu_url'=>'index.php?act=member_flea&op=add_goods')
 				);
 				break;
 			case 'favorites':
 				$menu_array = array(
-					1=>array('menu_key'=>'favorites',	'menu_name'=>编辑闲置,	'menu_url'=>'index.php?act=member_flea&op=favorites')
+					1=>array('menu_key'=>'favorites',	'menu_name'=>'编辑闲置',	'menu_url'=>'index.php?act=member_flea&op=favorites')
 				);
 		}
 		if(!empty($array)) {

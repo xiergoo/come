@@ -40,12 +40,4 @@ class areaControl extends BaseHomeControl{
 		echo $_GET['callback'].'('.json_encode(Model('area')->getAreaArrayForJson()).')';
 	}
 	
-	/**
-	 * json输出地址数组 v3-b12
-	 */
-	public function json_area_showOp()
-	{
-		echo $_GET['callback'].'('.json_encode(Model('area')->getAreaArrayForJson()).')';
-	}
-	
 }
