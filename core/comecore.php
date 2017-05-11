@@ -8,9 +8,9 @@
  */
 
 defined('InShopNC') or exit('Access Invalid!');
-if (!@include(BASE_DATA_PATH.'/config/config.ini.php')) exit('config.ini.php isn\'t exists!');
-if (file_exists(BASE_PATH.'/config/config.ini.php')){
-	include(BASE_PATH.'/config/config.ini.php');
+if (!@include(BASE_DATA_PATH.sprintf('/config/config%s.ini.php',Environmental))) exit('core:'.BASE_DATA_PATH.sprintf('/config/config%s.ini.php',Environmental).' isn\'t exists!');
+if (file_exists(BASE_PATH.sprintf('/config/config%s.ini.php',Environmental))){
+	include(BASE_PATH.'/config/config'.Environmental.'.ini.php');
 }
 global $config;
 

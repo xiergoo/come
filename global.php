@@ -7,8 +7,12 @@
  *
  * 
  */
-
-error_reporting(E_ALL & ~E_NOTICE);
+define('Environmental','.dev');
+if(Environmental=='.dev'){
+	error_reporting(E_ALL & ~E_NOTICE);
+}else{
+	error_reporting(0);
+}
 define('BASE_ROOT_PATH',str_replace('\\','/',dirname(__FILE__)));
 /**
  * 安装判断
