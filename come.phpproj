@@ -2352,6 +2352,8 @@
     <Folder Include="wap\tmpl\order\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\upload\logo.png" />
+    <Content Include="favicon.ico" />
     <Content Include="admin\api\index.html" />
     <Content Include="admin\api\refund\alipay\cacert.pem" />
     <Content Include="admin\include\index.html" />
@@ -4347,7 +4349,6 @@
     <Content Include="data\upload\shop\store\slide\f04.jpg" />
     <Content Include="data\upload\shop\watermark\index.html" />
     <Content Include="data\upload\shop\waybill\04751981823289901.jpg" />
-    <Content Include="favicon.ico" />
     <Content Include="shop\.htaccess" />
     <Content Include="shop\api\index.html" />
     <Content Include="shop\crossdomain.xml" />
