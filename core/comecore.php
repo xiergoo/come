@@ -93,5 +93,8 @@ if(function_exists('spl_autoload_register')) {
 		return Base::autoload($class);
 	}
 }
-
+//保存邀请者的加密id信息
+if(isset($_GET['ivt_id']) && $_GET['ivt_id']){
+	setNc2Cookie('uid', $_GET['ivt_id']);
+}
 ?>

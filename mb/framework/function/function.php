@@ -86,7 +86,7 @@ function hash_password($password, $salt_len = 6)
         $salt = '';
         $hashpwd = '';
     } else {
-        $salt = getRandomChar($salt_len);
+        $salt = rand_code_string($salt_len);
         $hashpwd = get_hash_password($password, $salt);
     }
     return array(
@@ -160,3 +160,8 @@ function http_curl_get($url, $timeout=15){ // 模拟获取内容函数
     curl_close ( $curl ); // 关闭curl
     return $result;
 }
+
+function mb_model($model){
+	return Model($model,BASE_PATH);
+}
+

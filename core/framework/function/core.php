@@ -1997,6 +1997,9 @@ function getChat($layout){
  * @return string
  */
 function url($act = '', $op = '', $args = array(), $model = false, $site_url = ''){
+	if($_SESSION['member_id']>0){
+		$args['ivt_id']=base64_encode($_SESSION['member_id']);
+	}
     //伪静态文件扩展名
     $ext = '.html';
     //入口文件名
@@ -2396,4 +2399,38 @@ function encryptShow($str,$start,$length) {
  */
 function callback($state = true, $msg = '', $data = array()) {
     return array('state' => $state, 'msg' => $msg, 'data' => $data);
+}
+
+/**
+ * 格式化输出参数，用于调试
+ * @param unknown $var
+ * @param string $echo
+ * @param string $label
+ * @param string $strict
+ * @return NULL|string
+ */
+function dump($var, $echo = true, $label = null, $strict = true)
+{
+	$label = ($label === null) ? '' : rtrim($label) . ' ';
+	if (!$strict) {
+		if (ini_get('html_errors')) {
+			$output = print_r($var, true);
+			$output = '<pre>' . $label . htmlspecialchars($output, ENT_QUOTES) . '</pre>';
+		} else {
+			$output = $label . print_r($var, true);
+		}
+	} else {
+		ob_start();
+		var_dump($var);
+		$output = ob_get_clean();
+		if (!extension_loaded('xdebug')) {
+			$output = preg_replace('/\]\=\>\n(\s+)/m', '] => ', $output);
+			$output = '<pre>' . $label . htmlspecialchars($output, ENT_QUOTES) . '</pre>';
+		}
+	}
+	if ($echo) {
+		echo($output);
+		return null;
+	} else
+		return $output;
 }
