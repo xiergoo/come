@@ -621,6 +621,11 @@ class Model{
     public function checkActive($host = 'master') {
         $this->db->checkActive($host);
     }
+    
+    public function _sql(){
+    	echo $this->db->_sql();
+    	die;
+    }
 
 }
 
@@ -635,7 +640,12 @@ class ModelDb{
     // 查询表达式
     protected $selectSql  =     'SELECT%DISTINCT% %FIELD% FROM %TABLE%%INDEX%%JOIN%%WHERE%%GROUP%%HAVING%%ORDER%%LIMIT% %UNION%';
 
+    private $str_sql='';
 
+    public function _sql(){
+    	return $this->str_sql;
+    }
+    
     public function select($options=array()) {
 //     	static $_cache = array();
 		$sql = $this->buildSelectSql($options);
@@ -661,6 +671,7 @@ class ModelDb{
     	}
         $sql  = $this->parseSql($this->selectSql,$options);
         $sql .= $this->parseLock(isset($options['lock'])?$options['lock']:false);
+        $this->str_sql=$sql;
         return $sql;
     }
 
@@ -929,6 +940,7 @@ class ModelDb{
             	//防止条件传错，删除所有记录
             	return false;
             }
+            $this->str_sql=$sql;
         return DB::execute($sql);
     }
 
@@ -944,6 +956,7 @@ class ModelDb{
             	//防止条件传错，更新所有记录
             	return false;
             }
+            $this->str_sql=$sql;
         return DB::execute($sql);
     }
 
