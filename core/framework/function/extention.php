@@ -161,7 +161,3 @@ function http_curl_get($url, $timeout=15){ // 模拟获取内容函数
     return $result;
 }
 
-function mb_model($model){
-	return Model($model,BASE_PATH);
-}
-

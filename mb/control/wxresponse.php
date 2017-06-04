@@ -4,7 +4,7 @@ defined ( 'InShopNC' ) or exit ( 'Access Invalid!' );
 /**
  * ******************************** 前台control父类 *********************************************
  */
-class wxresponseControl extends wechatClass {
+class wxresponseControl extends wechatbase {
 	public function __construct() {		
 		global $config;
 		parent::__construct ( $config['wechat'] );

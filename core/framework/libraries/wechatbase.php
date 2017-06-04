@@ -46,7 +46,7 @@ defined('InShopNC') or exit('Access Invalid!');
  *  		);
  *   $result = $weObj->createMenu($newmenu);
  */
-class wechatClass
+class wechatbase
 {
 	const MSGTYPE_TEXT = 'text';
 	const MSGTYPE_IMAGE = 'image';

@@ -210,4 +210,50 @@ class Tpl{
 		$xml .= "</rows>";
 		echo $xml;		
 	}		
+
+	/**
+	 * 调用显示模板
+	 *
+	 * @param string $page_name
+	 * @param string $layout
+	 * @param int $time
+	 */
+	public static function display($tpl_name='',$layout='',$time=2000){
+		if (!defined('TPL_NAME')) define('TPL_NAME','default');
+		self::getInstance();
+		if (!empty(self::$tpl_dir)){
+			$tpl_dir = self::$tpl_dir.DS;
+		}
+		//默认是带有布局文件
+		if (empty($layout)){
+			$layout = 'layout'.DS.self::$layout_file.'.php';
+		}else {
+			$layout = 'layout'.DS.$layout.'.php';
+		}
+		$tpl_file = BASE_PATH.'/templates/'.TPL_NAME.DS.$tpl_dir.$tpl_name.'.php';
+		if (file_exists($tpl_file)){
+			//对模板变量进行赋值
+			$output = self::$output_value;
+			//页头
+			$output['html_title'] = $output['html_title']!='' ? $output['html_title'] :$GLOBALS['setting_config']['site_name'];
+			$output['seo_keywords'] = $output['seo_keywords']!='' ? $output['seo_keywords'] :$GLOBALS['setting_config']['site_name'];
+			$output['seo_description'] = $output['seo_description']!='' ? $output['seo_description'] :$GLOBALS['setting_config']['site_name'];
+			$output['ref_url'] = getReferer();
+	
+			Language::read('common');
+			$lang = Language::getLangContent();
+	
+			@header("Content-type: text/html; charset=".CHARSET);
+			
+			if (file_exists($tpl_file)){
+				include_once($tpl_file);
+			}else {
+				$error = 'Tpl ERROR:'.'templates'.DS.$tpl_file.' is not exists';
+				throw_exception($error);
+			}
+		}else {
+			$error = 'Tpl ERROR:'.'templates'.DS.$tpl_dir.$tpl_file.'.php'.' is not exists';
+			throw_exception($error);
+		}
+	}
 }
