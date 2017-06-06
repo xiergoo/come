@@ -60,6 +60,9 @@ class feelingsControl extends memberControl {
 			$fl_id = intval($_GET['fl_id']);
 			if($fl_id>0){
 				$feelings_info = Model('feelings_list')->where(['fl_id'=>$fl_id])->find();
+				if($feelings_info['member_id'!=$this->member_id]){
+					showMessage('无法查看他人信息',url('fellings','index'));
+				}
 				Tpl::output('info',$feelings_info);
 				Tpl::output('title','修改事件');
 			}else{
@@ -70,6 +73,18 @@ class feelingsControl extends memberControl {
 		}
 	}
 
+	public function item_listOp(){
+		$fl_id = intval($_GET['id']);
+		if($fl_id<=0){
+			showMessage('无效的参数',url('fellings','index'));
+		}
+		$feelings_info = Model('feelings_list')->where(['fl_id'=>$fl_id])->find();
+		if($feelings_info['member_id'!=$this->member_id]){
+			showMessage('无法查看他人信息',url('fellings','index'));
+		}
+		$this->lists('feelings_item', ['fl_id'=>$fl_id],'fi_id desc');
+	}
+	
 	private function get_feelings_type($type,$all=false){
 		$list=[
 			1=>'婚嫁',

@@ -8,11 +8,15 @@
 				</div>
 				<div class="content">
 					<div class="tab-container">
-						<table class="table">
+						<table class="table table-striped table-responsive">
+						<thead>
 						<tr><th>事件名称</th><th>事件类型</th><th>事件日期</th></tr>
+						</thead>
+						<tbody>
 						<?php foreach ($output['list'] as $li) { ?>
 						<tr><td><?php echo $li['fl_name'] ?></td><td><?php echo $li['fl_type_name'] ?></td><td><?php echo $li['fl_date'] ?></td></tr>
 						<?php } ?>
+						</tbody>
 						</table>
 					</div>
 				</div>
